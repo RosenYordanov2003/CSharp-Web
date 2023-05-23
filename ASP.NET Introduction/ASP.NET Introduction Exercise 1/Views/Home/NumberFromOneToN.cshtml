@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = $"Numbers from 1 to {ViewBag.Count}";
+}
+<ul>
+    @for (int i = 1; i <= ViewBag.Count; i++)
+    {
+        <li>@i</li>;
+    }
+</ul>
+<div class="text-center">
+    <form method="post">
+        <input name="count" value="@ViewBag.Count" />
+        <button type="submit">Submit</button>
+    </form>
+</div>
