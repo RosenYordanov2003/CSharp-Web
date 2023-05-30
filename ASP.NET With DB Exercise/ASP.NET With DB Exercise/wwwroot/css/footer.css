@@ -1,0 +1,20 @@
+﻿html {
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+footer{
+    padding: 4rem 3rem;
+    text-align:center;
+    background-color: forestgreen;
+    color: white;
+    font-size: 1.2rem;
+}
+footer a{
+    color: white;
+}

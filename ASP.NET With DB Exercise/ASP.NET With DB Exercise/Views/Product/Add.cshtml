@@ -1,0 +1,26 @@
+﻿@model ProductViewModel
+
+<link rel="stylesheet" href="~/css/ProductAddAction.css" asp-append-version="true" />
+<h2 class="title">Add Product</h2>
+<form method="post">
+    <div class="container">
+        <label asp-for="@Model.Name">Name</label>
+        <input asp-for="@Model.Name" placeholder="enter product name..."></>
+        <span asp-validation-for="@Model.Name"></span>
+    </div>
+    <div class="container">
+        <label asp-for="@Model.Quantity">Quantity</label>
+        <input asp-for="@Model.Quantity" placeholder="enter quantity..."></>
+        <span asp-validation-for="@Model.Quantity"></span>
+    </div>
+    <div class="container">
+        <label asp-for="@Model.Price">Price</label>
+        <input asp-for="@Model.Price" placeholder="enter product price..."></>
+        <span asp-validation-for="@Model.Price"></span>
+    </div>
+    <button class="create-btn" type = "submit">Create</button>
+
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial"></partial>
+}

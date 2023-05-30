@@ -1,0 +1,31 @@
+﻿@model List<ProductViewModel>
+
+<link rel="stylesheet" href="~/css/AllProducts.css" asp-append-version="true" />
+@if (Model.Count == 0)
+{
+    <p class="missing-products-message">There are not any products yet</p>
+}
+else
+{
+    foreach (ProductViewModel product in Model)
+    {
+        <article class="product-card">
+            <div class="product-info">
+                <p class="product-content">Product: @product.Name</p>
+                <p class="product-content">Price: @product.Price</p>
+                <p class="product-content">Quantity: @product.Quantity</p>
+                <p class="product-content">Barcode: @product.BarcodeNumber</p>
+            </div>
+            <div class="btn-container">
+                <form asp-controller="Product" asp-action="Delete" method="post">
+                    <input type="hidden" name="id" value="@product.Id" />
+                    <button type="submit" class="delete-btn">Delete</button>
+                </form>
+                <form asp-controller="Product" asp-action="Edit" method="get">
+                    <input type="hidden" name="id" value="@product.Id" />
+                    <button class="edit-btn">Edit</button>
+                </form>
+            </div>
+        </article>
+    }
+}

@@ -1,0 +1,22 @@
+﻿html {
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.content {
+  text-align:center;
+  margin: 12rem 0rem;
+  padding: 0rem 2rem
+}
+.title{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.content-description{
+    font-size:1.4rem;
+}

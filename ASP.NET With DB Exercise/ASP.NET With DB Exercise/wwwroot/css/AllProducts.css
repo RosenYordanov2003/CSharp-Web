@@ -1,0 +1,38 @@
+﻿*{
+  box-sizing: border-box;
+}
+
+.product-card{
+    padding: 4rem;
+    display: flex;
+    gap: 3.5rem;
+    align-items: center;
+}
+.btn-container{
+    display:flex;
+    align-items: center;
+    gap: 1rem;
+}
+.product-content{
+    font-size: 2rem;
+}
+.product-info p:first-child{
+    text-transform: capitalize;
+}
+.delete-btn,.edit-btn{
+   font-size:1.2rem;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   padding: 12px 48px;
+   transition: 0.4s ease;
+}
+.delete-btn{
+    background-color: red;
+}
+.edit-btn {
+    background-color: #007FFF;
+}
+.edit-btn:hover,.delete-btn:hover{
+    opacity: 0.6;
+}

@@ -1,0 +1,34 @@
+﻿@model ProductViewModel
+
+<link rel="stylesheet" href="~/css/ProductEdit.css" asp-append-version="true" />
+
+<h2 class="title">Edit Product</h2>
+<form asp-controller="Product" asp-action="Edit" method="post">
+    <div class="container">
+        <label asp-for="@Model.Id">Product Id</label>
+        <input readonly asp-for="@Model.Id" value="@Model.Id" />
+    </div>
+    <div class="container">
+       <label asp-for="@Model.Name">Product Name</label>
+       <input asp-for="@Model.Name" value="@Model.Name" />
+       <span asp-validation-for="@Model.Name"></span>
+   </div>
+    <div class="container">
+        <label asp-for="@Model.Price">Product Price</label>
+        <input asp-for="@Model.Price" value="@Model.Price" />
+        <span asp-validation-for="@Model.Price"></span>
+    </div>
+    <div class="container">
+        <label asp-for="@Model.Quantity">Product Quantity</label>
+        <input asp-for="@Model.Quantity" value="@Model.Quantity" />
+        <span asp-validation-for="@Model.Quantity"></span>
+    </div>
+    <div class="container">
+        <label asp-for="@Model.BarcodeNumber">Prodcut Barcode</label>
+        <input asp-for="@Model.BarcodeNumber" value="@Model.BarcodeNumber" />
+    </div>
+    <button class="edit-btn" type="submit">Edit</button>
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial"></partial>
+}
