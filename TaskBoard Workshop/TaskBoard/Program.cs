@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using TaskBoard.Core.Contracts;
+using TaskBoard.Core.Services;
 using TaskBoard.Data;
+using TaskBoardCore.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +23,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 })
     .AddEntityFrameworkStores<TaskBoardDbContext>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IBoardService, BoardService>();
+builder.Services.AddScoped<ITaskService, TaskService>();
 
 var app = builder.Build();
 
