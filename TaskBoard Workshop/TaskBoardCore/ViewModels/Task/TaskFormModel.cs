@@ -16,7 +16,7 @@
         [Required]
         [StringLength (DescriptionMaxLength, MinimumLength = DescriptionMinLength, ErrorMessage = "Description should be at least {2} characters long")]
         public string Description { get; set; } = null!;
-        public int BoardId { get; set; }
+        public int? BoardId { get; set; }
 
         public IEnumerable<TaskBoardFormModel> Boards { get; set; } = null!;
     }
