@@ -15,7 +15,7 @@
         [Required]
         [MaxLength(DescriptionMaxLength)]
         public string Description { get; set; } = null!;
-        public  DateTime CreatedOn { get; set; }
+        public DateTime CreatedOn { get; set; }
         public Board? Board { get; set; }
 
 

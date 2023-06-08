@@ -255,7 +255,7 @@ namespace TaskBoard.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Boards");
+                    b.ToTable("Boards", (string)null);
 
                     b.HasData(
                         new
@@ -309,7 +309,7 @@ namespace TaskBoard.Data.Migrations
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("Tasks");
+                    b.ToTable("Tasks", (string)null);
 
                     b.HasData(
                         new
