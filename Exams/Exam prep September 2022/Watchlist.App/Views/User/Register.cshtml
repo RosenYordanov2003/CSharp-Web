@@ -1,0 +1,42 @@
+﻿@*@{
+    viewdata["title"] = "register";
+}
+
+<h1 class="text-center">@viewdata["title"]</h1>
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <form id="registerform" method="post">
+            <hr />
+            <div asp-validation-summary="modelonly" class="text-danger"></div>
+            <div class="text-center mb-3">
+                <label asp-for="@model.username">username</label>
+                <input class="form-control " autocomplete="username" aria-required="true" asp-for="@model.username" />
+                <span asp-validation-for="@model.username" class="text-danger"></span>
+            </div>
+            <div class="text-center mb-3">
+                <label asp-for="@model.email">email</label>
+                <input class="form-control " autocomplete="username" aria-required="true" asp-for="@model.email" />
+                <span asp-validation-for="@model.email" class="text-danger"></span>
+            </div>
+            <div class="text-center mb-3">
+                <label asp-for="@model.password">password</label>
+                <input class="form-control" type="password" autocomplete="new-password" aria-required="true" asp-for="@model.password" />
+                <span asp-validation-for="@model.password" class="text-danger"></span>
+            </div>
+            <div class="text-center mb-3">
+                <label asp-for="@model.confirmpassword">confirm password</label>
+                <input class="form-control" type="password" autocomplete="new-password" aria-required="true" asp-for="@model.confirmpassword" />
+                <span asp-validation-for="@model.confirmpassword" class="text-danger"></span>
+            </div>
+            <div class="text-center">
+                <button id="registersubmit" type="submit" class="btn btn-primary">register</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section scripts {
+    <partial name="_validationscriptspartial" />
+}
+*@
