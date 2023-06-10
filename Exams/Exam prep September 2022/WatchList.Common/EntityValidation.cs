@@ -15,8 +15,8 @@
             public const int MovieDirectorNameMinLength = 5;
             public const int MovieDirectorNameMaxLength = 50;
 
-            public const decimal MovieRatingMinValue = 0.00m;
-            public const decimal MovieRatingMaxValue = 10.00m;
+            public const string MovieRatingMinValue = "0.00";
+            public const string MovieRatingMaxValue = "10.00";
         }
         public static class UserEntity
         {
