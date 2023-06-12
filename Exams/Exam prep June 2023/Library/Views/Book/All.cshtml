@@ -1,4 +1,6 @@
-﻿@*@{
+﻿@using Library.Models.Book
+@model IEnumerable<BookAllViewModel>
+@{
     ViewBag.Title = "All Books";
 }
 
@@ -18,11 +20,9 @@
                 <p class="mb-0">Rating: @book.Rating</p>
                 <p >Category: @book.Category</p>
             </div>
-
-            <form class="input-group-sm" asp-controller="Book" asp-action="AddToCollection" asp-route-id="@book.Id">
+            <form class="input-group-sm" asp-controller="Book" asp-action="AddToCollection" asp-route-id="@book.Id" name="bookId">
                 <input type="submit" value="Add to Collection" class="fs-6 btn btn-success mb-3 p-2" />
             </form>
         </div>
     }
 </div>
-*@
