@@ -1,14 +1,17 @@
-﻿@*
-    @inject SignInManager<>
-    @inject UserManager<>
-*@
+﻿@using Contacts.Data.Models
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManaher
 
-@*
+
+
 <ul class="navbar-nav">
-    @if (SignInManager.IsSignedIn(User))
+    @if (SignInManaher.IsSignedIn(User))
     {
         <li class="nav-item">
-            <form class="form-inline" asp-controller="User" asp-action="Logout" asp-route-id="@UserManager.GetUserId(User)">
+            <p class="nav-link text-dark"> @User.Identity?.Name</p>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-controller="User" asp-action="Logout">
                 <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
             </form>
         </li>
@@ -23,4 +26,4 @@
         </li>
     }
 </ul>
-*@
+

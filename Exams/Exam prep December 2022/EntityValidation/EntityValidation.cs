@@ -25,7 +25,7 @@
             public const int EmailMaxLength = 60;
 
             public const int PhoneNumberMinLength = 10;
-            public const int PhoneNumberMaxLength = 13;
+            public const int PhoneNumberMaxLength = 15;
             public const string PhoneNumberRegex = @"^(\+359|0)(\-| |)\d{3}\2\d{2}\2\d{2}\2\d{2}$";
 
             public const string WebSiteRegex = @"^(www\.)[A-Za-z\d -]+\.bg$";

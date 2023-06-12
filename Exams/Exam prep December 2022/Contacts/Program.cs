@@ -1,4 +1,7 @@
+using Contacts.Contracts;
 using Contacts.Data;
+using Contacts.Data.Models;
+using Contacts.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,10 +13,16 @@ builder.Services.AddDbContext<ContactsDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false;
+    options.Password.RequireDigit = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+})
     .AddEntityFrameworkStores<ContactsDbContext>();
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddScoped<IContacService, ContactService>();
 var app = builder.Build();
 
 
